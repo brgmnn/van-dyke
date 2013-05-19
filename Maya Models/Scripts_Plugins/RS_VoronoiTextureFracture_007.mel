@@ -1,0 +1,833 @@
+/////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////// VORONOI TEXTURE FRACTURE ///////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+//// (c) Robert Schröder, 2012 //////////////////////////////////////////////////////
+////////////////////////////////////////////////////////// procanic.blogspot.com ////
+/////////////////////////////////////////////////////////////////////////////////////
+//                                                                                 //
+// DESCRIPTION:                                                                    //
+// Tool for texture based geometry generation.                                     //
+// - fracures by image or voronoi shader                                           //
+// - create voronoi shader (using SOuP) via GUI                                    //
+// - mesh optimizations after texture2geometry (delete inner edges)                //
+//                                                                                 //
+/////////////////////////////////////////////////////////////////////////////////////
+//                                                                                 //
+// DISCLAIMER:                                                                     //
+// for this script to work you will need the SOuP plug-in by Peter Shipkov!!!      //
+// you can find it at: http://www.soup-dev.com/                                    //
+//                                                                                 //
+// the tool is "as is". you can use it for free & at your own risk.                //
+//                                                                                 //
+/////////////////////////////////////////////////////////////////////////////////////
+//                                                                                 //
+// USAGE:                                                                          //
+// - specify an flat object (e.g. plane)                                           //
+// - press "Create Voronoi Shader"                                                 //
+// - adjust scale and set other options as needed                                  //
+// - click on "Fracture Geometry"                                                  //
+//                                                                                 //
+/////////////////////////////////////////////////////////////////////////////////////
+
+global proc RS_voroTexFrac_GUI()
+{
+	if(`window -exists RS_voroTexFrac_window`) deleteUI RS_voroTexFrac_window;
+	if(`windowPref -exists RS_voroTexFrac_window`) windowPref -r RS_voroTexFrac_window;
+	
+	string $defaultDir = (`internalVar -usd` + "voronoiTextureFracture/fractureImages/");
+	if (!`filetest -d $defaultDir`) sysFile -md $defaultDir;
+	if (!`optionVar -ex "SOuP_vtf_texResX"`) optionVar -iv "SOuP_vtf_texResX" 512;
+	if (!`optionVar -ex "SOuP_vtf_texResY"`) optionVar -iv "SOuP_vtf_texResY" 512;
+
+	window -w 500 -t "Voronoi Texture Fracture v0.0.7 © 2012 Robert Schroeder" -titleBar 1 -mnb 1 -mxb 0 -mb 1 
+			-tlb 0 -sizeable 1 -te 160 RS_voroTexFrac_window;
+	
+	menu -label "Settings..";
+		menuItem -label "Preferences..." -c "RS_voroTexFrac_vtfPrefs;";
+		menuItem -label "Check for Updates.." -c "RS_voroTexFrac_updateCheck;";
+
+	columnLayout;
+		separator -w 500 -style "in";
+		rowLayout -nc 2 -cw 1 25 -cw 2 200;
+			separator -w 25 -style "none";
+			radioButtonGrp -numberOfRadioButtons 2 -label "Fracture Source:         " 
+				-labelArray2 "voronoi texture (SOuP)" "image file" 
+				-cc "RS_voroTexFrac_changeSource" 
+				-sl 1 -cw 2 150 -en2 1 vtf_radio_souce; 
+		setParent..;
+
+		separator -h 10 -style "none";
+		textFieldButtonGrp -label "Image File:" -text "" -buttonLabel "--> Browse.." -en 0 
+			-bc "RS_voroTexFrac_setImageFile;" 
+			-cc "RS_voroTexFrac_checkObj;" vtf_txtField_image;
+		textFieldButtonGrp -label "Object:" -text "" -buttonLabel "Use Selected" 
+			-bc "RS_voroTexFrac_setObject;" 
+			-cc "RS_voroTexFrac_checkObj;" vtf_txtField_obj;
+
+		separator -w 500 -h 10 -style "in";
+
+		// VORONOI TEXTURE OPTIONS
+		frameLayout -w 500 -l "Voronoi Texture Options" -cll 1 -cl 1 -vis 1 -en 0 vtf_frame_voro;
+			button -l "Create Voronoi Shader" -c "RS_voroTexFrac_createVoro" vtf_button_createVoro;
+			//separator -h 5 -style "none";
+			rowLayout -nc 3 -cw 1 5 -cw 2 100 -cw 3 200;
+				separator -w 5 -style "none";
+				button -l "Open Voronoi Shader\nin Attribute Editor" -w 120 -h 90
+					-c "RS_voroTexFrac_showVoro" vtf_button_showVoro;
+				columnLayout vtf_column_scl;
+					rowLayout -nc 2 -cw 50 100;
+						separator -w 50 -style "none";
+						checkBox -l "Proportional" -v 0 
+							-onc "RS_voroTexFrac_propScale(1)" 
+							-ofc "RS_voroTexFrac_propScale(0)" vtf_check_propScl;
+					setParent..;
+					floatSliderGrp -l "Scale X:" -v 1 -f 1 -min 0.1 -max 10.0 -fmx 100 -pre 3 
+						-cc "RS_voroTexFrac_changeScale(\"x\");" 
+						-dc "RS_voroTexFrac_changeScale(\"x\");" 
+						-cw 1 50 -cw 2 50 -cw 3 250 vtf_flSl_scaleX;
+					floatSliderGrp -l "Scale Y:" -v 1 -f 1 -min 0.1 -max 10.0 -fmx 100 -pre 3 
+						-cc "RS_voroTexFrac_changeScale(\"y\");" 
+						-dc "RS_voroTexFrac_changeScale(\"y\");" 
+						-cw 1 50 -cw 2 50 -cw 3 250 vtf_flSl_scaleY;
+					floatSliderGrp -l "Scale Z:" -v 1 -f 1 -min 0.1 -max 10.0 -fmx 100 -pre 3 
+						-cc "RS_voroTexFrac_changeScale(\"z\");" 
+						-dc "RS_voroTexFrac_changeScale(\"z\");" 
+						-cw 1 50 -cw 2 50 -cw 3 250 vtf_flSl_scaleZ;
+				setParent..;
+			setParent..;
+			separator -h 5 -style "none";
+
+		setParent..;	
+
+		separator -w 500 -h 10 -style "in";
+
+		// IMAGE FILE CONVERSION OPTIONS
+		frameLayout -w 500 -l "Image File Conversion Options" -cll 1 -cl 1 -vis 1 -en 0 vtf_frame_image;
+			separator -h 5 -style "none";
+			rowLayout -nc 4 -cw 1 38 -cw 2 50 -cw 3 300 -cw 3 50;
+				separator -w 5 -style "none";
+				text -l "Quantize:" -w 100 -align "right";
+				// Quantize 
+				checkBox -l "" -v 0 -onc "intSliderGrp -e -en 1 vtf_intSl_quant;" -ofc "intSliderGrp -e -en 0 vtf_intSl_quant;" vtf_check_quant;
+				button -h 15 -l "Reset Defaults" -c "RS_voroTexFrac_resetDef";
+			setParent..;
+			// Quantize Levels
+			intSliderGrp -l "Quantize Levels:" -v 10 -f 1 -min 1 -max 64 -fmn 1 -fmx 64 -en 0 vtf_intSl_quant; 
+			// Search radius
+			intSliderGrp -l "Search radius:" -v 7 -f 1 -min 3 -max 10 -fmn 3 -fmx 10 vtf_intSl_sRad;
+			// Minimum segment size
+			floatSliderGrp -l "Minimum segment size:" -pre 4 -v 0.001 -f 1 -min 0.0001 -max 0.5 -fmn 0.0001 -fmx 0.5 vtf_flSl_minSeg;
+			// Color range
+			floatSliderGrp -l "Color range:" -pre 4 -v 4.5 -f 1 -min 1.0 -max 10.0 -fmn 1.0 -fmx 10.0 vtf_flSl_colRng;
+			// Maximum color difference
+			floatSliderGrp -l "Maximum color difference:" -pre 4 -v 0.0001 -f 1 -min 0.0001 -max 0.5 -fmn 0.0001 -fmx 0.5 vtf_flSl_maxColDif;
+			separator -h 5 -style "none";
+		setParent..;	
+
+		separator -w 500 -h 10 -style "in";
+
+		rowLayout -nc 2 -cw 1 55 -cw 2 300;
+			separator -w 5 -style "none";
+			columnLayout;
+				checkBox -l "Seperate into Multiple Objects" 
+					-onc "checkBox -e -en 1 vtf_check_edg;"
+					-ofc "checkBox -e -en 0 -v 0 vtf_check_edg;"
+					-v 1 vtf_check_sep;
+				checkBox -l "Remove Redundant Edges" -v 1 vtf_check_edg;
+				checkBox -l "Keep Original Object" -v 0 vtf_check_keepObj;
+				checkBox -l "Extrude Pieces" 
+					-onc "rowLayout -e -en 1 -vis 1 vtf_row_extr;"
+					-ofc "rowLayout -e -en 0 -vis 0 vtf_row_extr;"
+					-v 0 vtf_check_extr;
+			setParent..;
+		setParent..;		
+		rowLayout -nc 3 -cw 1 230 -cw 2 130 -cw 3 100 -en 0 -vis 0 vtf_row_extr;
+			floatFieldGrp -l "Extrude Amount:" -nf 1 -v1 -1.0 vtf_float_extr;
+			checkBox -l "Keep Extrude History" -v 1 vtf_check_hist;
+			button -h 20 -l "Extrude selected pieces" -c "RS_extrudeSelectedPieces();";
+		setParent..;
+		rowLayout -nc 2 -cw 1 55 -cw 2 300;
+			separator -w 5 -style "none";
+			columnLayout;
+				checkBox -l "Create Shader" -v 1 vtf_check_shdr;
+				checkBox -l "Center Pivots" -v 1 vtf_check_piv;
+			setParent..;
+		setParent..;
+
+		separator -w 500 -h 10 -style "in";
+
+		button -l "Fracture Geometry" 
+			-c "RS_voroTexFrac_doFracture;" 
+			-w 500 -en 0 vtf_button_frac;
+
+		separator -w 500 -h 10 -style "in";
+	setParent..;
+
+	showWindow RS_voroTexFrac_window;
+	RS_voroTexFrac_soupCheck;
+}
+
+
+global proc RS_voroTexFrac_showVoro()
+{
+	//string $obj = `textFieldButtonGrp -q -tx vtf_txtField_obj`;
+	string $shader = ("voroTex_" + `textFieldButtonGrp -q -tx vtf_txtField_obj`);
+	if (`objExists $shader`)
+	{
+		select -r $shader;
+		AttributeEditor;
+	}	
+}
+
+global proc RS_voroTexFrac_changeScale(string $axis)
+{
+	string $obj = `textFieldButtonGrp -q -tx vtf_txtField_obj`;
+	string $scaleGRP = ("scaleGRP_voroPlace_" + $obj);
+	string $ctrl;
+	float $value;
+	
+	if(`checkBox -q -v vtf_check_propScl`) $axis = "all";
+	if ($axis == "all")
+	{
+		$value = `floatSliderGrp -q -v vtf_flSl_scaleX`;
+		setAttr ($scaleGRP + ".scale") ($value) ($value) ($value);
+		floatSliderGrp -e -v $value vtf_flSl_scaleY;
+		floatSliderGrp -e -v $value vtf_flSl_scaleZ;
+	}
+	else
+	{
+		$ctrl = ("vtf_flSl_scale" + capitalizeString($axis));
+		$value = `floatSliderGrp -q -v $ctrl`;
+		setAttr ($scaleGRP + ".s" + $axis) ($value);
+	}
+}
+
+
+global proc RS_voroTexFrac_propScale(int $on)
+{
+	if ($on) floatSliderGrp -e -l "Scale:" vtf_flSl_scaleX;
+	else floatSliderGrp -e -l "Scale X:" vtf_flSl_scaleX;
+	floatSliderGrp -e -en (!$on) -vis (!$on) vtf_flSl_scaleY;
+	floatSliderGrp -e -en (!$on) -vis (!$on) vtf_flSl_scaleZ;
+	RS_voroTexFrac_changeScale("x");
+}
+
+
+global proc RS_voroTexFrac_resetDef()
+{
+	checkBox -e -v 0 vtf_check_quant; 
+	intSliderGrp -e -v 10 vtf_intSl_quant;
+	intSliderGrp -e -v 7 vtf_intSl_sRad; 
+	floatSliderGrp -e -v 0.001 vtf_flSl_minSeg; 
+	floatSliderGrp -e -v 4.5 vtf_flSl_colRng;
+	if (`radioButtonGrp -q -sl vtf_radio_souce` == 1) floatSliderGrp -e -v 0.0001 vtf_flSl_maxColDif; 
+	else floatSliderGrp -e -v 0.125 vtf_flSl_maxColDif; 
+}
+
+global proc RS_voroTexFrac_createVoro()
+{
+	//button -e -en 0 vtf_button_createVoro;
+	//button -e -en 1 vtf_button_frac;
+	string $obj = `textFieldButtonGrp -q -tx vtf_txtField_obj`;
+
+	if (!`objExists ("voroShd_" + $obj)`)
+	{
+		shadingNode -asShader -name ("voroShd_" + $obj) surfaceShader;
+		sets -renderable true -noSurfaceShader true -empty -name ("voroShdG_" + $obj) ;
+		connectAttr -f ("voroShd_" + $obj + ".outColor") ("voroShdG_" + $obj + ".surfaceShader");
+		
+		shadingNode -asTexture -name ("voroTex_" + $obj) voronoiTexture3D;
+		shadingNode -asUtility -name ("voroPlace_" + $obj) place3dTexture;
+		connectAttr ("voroPlace_" + $obj + ".wim[0]") ("voroTex_" + $obj + ".pm");
+		connectAttr -f ("voroTex_" + $obj + ".outColor") ("voroShd_" + $obj + ".outColor");
+
+		// set default ramp values 
+		setAttr ("voroTex_" + $obj + ".colorRamp[0].colorRamp_Color") -type double3 1 0 0; // red
+		setAttr ("voroTex_" + $obj + ".colorRamp[0].colorRamp_Position") 0;
+		setAttr ("voroTex_" + $obj + ".colorRamp[1].colorRamp_Color") -type double3 0 1 0; // green
+		setAttr ("voroTex_" + $obj + ".colorRamp[1].colorRamp_Position") 0.2;
+		setAttr ("voroTex_" + $obj + ".colorRamp[2].colorRamp_Color") -type double3 0 0 1; // blue
+		setAttr ("voroTex_" + $obj + ".colorRamp[2].colorRamp_Position") 0.4;
+		setAttr ("voroTex_" + $obj + ".colorRamp[3].colorRamp_Color") -type double3 1 1 0; // yellow
+		setAttr ("voroTex_" + $obj + ".colorRamp[3].colorRamp_Position") 0.6;
+		setAttr ("voroTex_" + $obj + ".colorRamp[4].colorRamp_Color") -type double3 0 1 1; // cyan
+		setAttr ("voroTex_" + $obj + ".colorRamp[4].colorRamp_Position") 0.8;
+		setAttr ("voroTex_" + $obj + ".colorRamp[5].colorRamp_Color") -type double3 1 0 1; // magenta
+		setAttr ("voroTex_" + $obj + ".colorRamp[5].colorRamp_Position") 1;
+	}	
+
+	select -r $obj;
+	hyperShade -assign ("voroShd_" + $obj);	 	
+
+	// activate hardware shading
+	RS_AEhardwareTextureQualityCB "outColor outTransparency" ("voroShd_" + $obj + ".message");
+	
+	group -em -n ("scaleGRP_voroPlace_" + $obj);
+	xform -os -piv 0 0 0 ("scaleGRP_voroPlace_" + $obj);
+	parent ("voroPlace_" + $obj) ("scaleGRP_voroPlace_" + $obj);
+	
+	RS_voroTexFrac_checkObj;
+}
+
+global proc RS_voroTexFrac_changeSource()
+{
+	int $source = `radioButtonGrp -q -sl vtf_radio_souce`;
+	if ($source == 2)
+	{
+		textFieldButtonGrp -e -vis 1 -en 1 vtf_txtField_image;
+		//frameLayout -e -cl 1 -vis 1 -en 0 vtf_frame_voro;
+	}
+	else
+	{
+		textFieldButtonGrp -e -vis 1 -en 0 vtf_txtField_image;
+		//frameLayout -e -cl 1 -vis 1 -en 1 vtf_frame_voro;
+	}
+	RS_voroTexFrac_checkObj;
+}
+
+
+global proc RS_voroTexFrac_setImageFile()
+{
+	string $imageFile = `RS_voroTexFrac_imageFileBrowser("Pick an Image File ... ")`;
+	if (`filetest -r $imageFile`) textFieldButtonGrp -e -tx $imageFile vtf_txtField_image;
+	RS_voroTexFrac_checkObj;
+}
+
+
+global proc string RS_voroTexFrac_imageFileBrowser(string $text)
+{
+	string $imageFile = `fileDialog -mode 0 -t ($text)`;
+ 	return $imageFile;
+}
+
+
+global proc RS_voroTexFrac_setObject()
+{
+	string $sel[] = `ls -sl`;
+	if (size($sel))
+	{
+		textFieldButtonGrp -e -tx ($sel[0]) vtf_txtField_obj;
+		RS_voroTexFrac_checkObj;
+	}
+}
+
+
+global proc int RS_voroTexFrac_meshCheck(string $obj)
+{
+	int $checkPass = 1;
+	string $shape[];
+	if (!`objExists $obj`) $checkPass = 0;
+	else
+	{
+		$shape = `listRelatives -s $obj`;
+		if (size($shape))
+		{
+			if (`objectType $shape[0]` != "mesh") $checkPass = 0;
+		}
+		else $checkPass = 0;
+	}
+	return $checkPass;
+}
+
+
+global proc RS_voroTexFrac_checkObj()
+{
+	string $obj = `textFieldButtonGrp -q -tx vtf_txtField_obj`;
+	string $image = `textFieldButtonGrp -q -tx vtf_txtField_image`;
+	string $scaleGRP = ("scaleGRP_voroPlace_" + $obj);
+	int $checkPass = `RS_voroTexFrac_meshCheck($obj)`;
+	float $scaleX, $scaleY, $scaleZ;
+	if (!$checkPass)
+	{
+		textFieldButtonGrp -e -tx "" vtf_txtField_obj;
+		frameLayout -e -en 0 -cl 1 vtf_frame_voro;
+		frameLayout -e -en 0 -cl 1 vtf_frame_image;
+		button -e -en 0 vtf_button_frac;
+	}
+	else
+	{
+		frameLayout -e -en 1 vtf_frame_image;
+		button -e -en (!`objExists ("voroShd_" + $obj)`) vtf_button_createVoro;
+		if (`radioButtonGrp -q -sl vtf_radio_souce` == 1) 
+		{
+			frameLayout -e -en 1 vtf_frame_voro;
+			button -e -en (`objExists ("voroShd_" + $obj)`) vtf_button_showVoro;
+			columnLayout -e -en (`objExists ("voroShd_" + $obj)`) vtf_column_scl;
+			if (`objExists $scaleGRP`)
+			{
+				$scaleX = `getAttr ($scaleGRP + ".sx")`;
+				$scaleY = `getAttr ($scaleGRP + ".sy")`;
+				$scaleZ = `getAttr ($scaleGRP + ".sz")`;
+				if (($scaleX == $scaleY) && ($scaleX == $scaleZ))
+				{
+					print "been here \n";
+					checkBox -e -v 1 vtf_check_propScl;
+					floatSliderGrp -e -v $scaleX vtf_flSl_scaleX;
+					RS_voroTexFrac_propScale(1);
+				}
+				else 
+				{
+					print "not equal \n";
+					checkBox -e -v 0 vtf_check_propScl;
+					floatSliderGrp -e -v $scaleX vtf_flSl_scaleX;
+					floatSliderGrp -e -v $scaleY vtf_flSl_scaleY;
+					floatSliderGrp -e -v $scaleZ vtf_flSl_scaleZ;
+					RS_voroTexFrac_propScale(0);
+				}
+			}
+			button -e -en (`objExists ("voroShd_" + $obj)`) vtf_button_frac;
+		}
+		else 
+		{
+			frameLayout -e -en 0 -cl 1 vtf_frame_voro;
+			button -e -en (`filetest -r $image`) vtf_button_frac;
+		}
+	}
+}
+
+
+global proc RS_AEhardwareTextureQualityCB(string $attrTokens, string $messagePlug )
+{
+    string $info = RS_getMaterialInfo($messagePlug);
+    if ($info == "") return;
+
+    string $connections[] = `listConnections ($info+".texture[0]")`;
+    if (size($connections) == 0) return;
+    string $texture = $connections[0];
+
+    int $index = 5;
+
+    string $buffer[] = `listAttr -string resolution $texture`;
+    int $hasResolutionAttr = (size($buffer) != 0);
+
+    if (!$hasResolutionAttr) addAttr -ln resolution -at long -dv 32 $texture;
+		setAttr ($texture+".resolution") 256;
+}
+
+
+global proc string RS_getMaterialInfo(string $messagePlug)
+{
+	string $materialName[] = `ls $messagePlug`;
+
+	if ($materialName[0] == "") return "";
+	string $connections[] = `listConnections $messagePlug`;
+	
+	for ($item in $connections) if (`objectType $item` == "materialInfo") return $item;
+
+	return "";
+}
+
+
+global proc string[] RS_separateByShader(string $obj, string $origObj, int $keepShaders)
+{
+	string $faces[], $shadingGRP[];
+	
+	// select object
+	select -r $obj;
+	DeleteHistory;
+	
+	// find shaders 
+	hyperShade -smn;
+	string $shaders[] = `ls -sl`;
+	
+	// loop through shaders
+	for ($s in $shaders)
+	{	
+		// find faces
+		hyperShade -objects $s;
+		string $faces[] = `ls -sl -fl`;
+		// seperate within object
+		if (size($faces)) polyChipOff -ch 0 -kft 1 -dup 0 -off 0 $faces;
+	}
+	
+	// separate by 
+	string $chunks[] = `polySeparate -ch 0 -n ($origObj + "_chunk#") $obj`;
+	
+	// group chunks
+	group -em -n ($origObj + "_chunks"); 
+	xform -os -piv 0 0 0 ($origObj + "_chunks");
+	parent $chunks ($origObj + "_chunks");
+	
+	// delete empty group
+	if (`objExists $obj`) delete $obj;
+	
+	// delete shaders
+	if (!$keepShaders)
+	{
+		for ($shader in $shaders)
+		{
+			// find and delete shading group
+			$shadingGRP = `listConnections -type "shadingEngine" $shader`;
+			delete $shadingGRP;
+		}
+		// delete shaders
+		delete $shaders;
+		
+		// assign lambert1 to chunks
+		select -r $chunks;
+		hyperShade -assign lambert1;
+	}
+	
+	return $chunks;
+}
+
+
+global proc RS_voroTexFrac_doFracture()
+{
+	string $scriptPath = (`getenv "MAYA_LOCATION"` + "/scripts/others/");
+	if (`filetest -r ($scriptPath + "createTextureToGeom.mel")`) eval("source \"" + $scriptPath + "createTextureToGeom.mel\"");
+	if (`filetest -r ($scriptPath + "performTextureToGeom.mel")`) eval("source \"" + $scriptPath + "performTextureToGeom.mel\"");
+	
+	int $sepFace = `checkBox -q -v vtf_check_sep`;
+	int $remEdge = `checkBox -q -v vtf_check_edg`;
+	int $keepOrig = `checkBox -q -v vtf_check_keepObj`;
+	int $extrude = `checkBox -q -v vtf_check_extr`;
+	int $cntrPiv = `checkBox -q -v vtf_check_piv`;
+	int $createShaders = `checkBox -q -v vtf_check_shdr`;
+	
+	string $obj = `textFieldButtonGrp -q -tx vtf_txtField_obj`;
+	string $shader = ("voroShd_" + $obj);
+	string $image = `textFieldButtonGrp -q -tx vtf_txtField_image`;
+	string $tokens1[], $tokens2[];
+	tokenize $image "/" $tokens1;
+	tokenize $tokens1[size($tokens1)-1] "\\." $tokens2;
+	string $imageName = $tokens2[0];
+	
+	// find tmp image dir
+	string $imageDir;
+	string $sourceImages = (`workspace -q -act` + "/sourceimages/");
+	string $userDir = (`internalVar -usd` + "voronoiTextureFracture/fractureImages/");
+	if (`optionVar -ex "SOuP_vtf_voroTexPath"`)
+	{
+		$imageDir = `optionVar -q "SOuP_vtf_voroTexPath"`;
+		if (!`filetest -d $imageDir`) 
+		{
+			if (`filetest -d $sourceImages`) $imageDir = $sourceImages;
+			else $imageDir = $userDir;
+		}
+	}
+	else
+	{
+		if (`filetest -d $sourceImages`) $imageDir = $sourceImages;
+		else $imageDir = $userDir;
+	}
+	optionVar -sv "SOuP_vtf_voroTexPath" $imageDir;
+		
+	string $parent[] = `listRelatives -p $obj`;
+	string $pieces[];
+	
+	string $origObj = $obj;
+	$obj = "vtf_fractureObj_tmp";
+	duplicate -rr -n $obj $origObj;
+	if (!$keepOrig) delete $origObj;
+	
+	if (`radioButtonGrp -q -sl vtf_radio_souce` == 1)
+	{
+		$image = ($imageDir + "voroShd_" + $origObj + "_tmp.iff");
+		$imageName = ("voroShd_" + $origObj + "_tmp");
+		select -cl;
+		// convert texture to image
+		convertSolidTx -antiAlias 0 -bm 1 -fts 1 -sp 0 -sh 0 -alpha 0 -doubleSided 0 -componentRange 0 
+			-resolutionX (`optionVar -q "SOuP_vtf_texResX"`) 
+			-resolutionY (`optionVar -q "SOuP_vtf_texResY"`) 
+			-name $imageName 
+			-fileImageName $image
+			-fileFormat "iff" 
+			("voroShd_" + $origObj + ".outColor") $obj;
+		// delete node
+		delete $imageName;
+		if (!$keepOrig)
+		{
+			// delete shader^
+			if (`objExists ("voroShd_" + $origObj)`) delete ("voroShd_" + $origObj);
+			if (`objExists ("voroShdG_" + $origObj)`) delete ("voroShdG_" + $origObj);
+			if (`objExists ("voroTex_" + $origObj)`) delete ("voroTex_" + $origObj);
+			if (`objExists ("voroPlace_" + $origObj)`) delete ("voroPlace_" + $origObj);
+			if (`objExists ("scaleGRP_voroPlace_" + $origObj)`) delete ("scaleGRP_voroPlace_" + $origObj);
+		}
+	}
+
+	// convert image texture to geometry
+	optionVar -stringValue textureToGeomInputFileOV $image;
+	
+	optionVar -intValue textureToGeomQuantizeOV (`checkBox -q -v vtf_check_quant`); 
+	optionVar -intValue textureToGeomQuantLevelsOV (`intSliderGrp -q -v vtf_intSl_quant`); 
+	optionVar -intValue textureToGeomSpatialRadiusOV (`intSliderGrp -q -v vtf_intSl_sRad`); 
+	optionVar -floatValue textureToGeomMinSegmentSizeOV (`floatSliderGrp -q -v vtf_flSl_minSeg`); 
+	optionVar -floatValue textureToGeomColorRangeOV (`floatSliderGrp -q -v vtf_flSl_colRng`);
+	optionVar -floatValue textureToGeomMaxColorDiffOV (`floatSliderGrp -q -v vtf_flSl_maxColDif`); 
+
+	optionVar -intValue textureToGeomMaxPointsOV 0;
+	optionVar -intValue textureToGeomFitToSelectedOV 1;
+	optionVar -floatValue textureToGeomFitOffsetOV 0.01; 
+	optionVar -stringValue textureToGeomFitUVSetOV "";
+	optionVar -intValue textureToGeomCreateShadersOV 1;
+	optionVar -stringValue textureToGeomShaderTemplateOV "";
+
+	select -r $obj;
+	performTextureToGeom 0;
+	//createTextureToGeom($image, ($obj + "_fractured"), "setTextureToGeomValues", 1);
+
+	rename $imageName ($obj + "_fractured");
+
+	// unparent fractured geometry
+	if (size($parent)) parent ($obj + "_fractured") $parent[0];
+	else parent -w ($obj + "_fractured");
+	//setAttr ($obj + ".v") 0;
+	
+	// separate geometry pieces
+	string $transforms[] = {};
+	string $pieces[] = {};
+	string $delete[] = {};
+	string $children[] = {};
+	if ($sepFace) RS_separateByShader(($obj + "_fractured"), $origObj, $createShaders);
+	delete $obj;
+
+	// keep only border edges
+	if ($remEdge)
+	{
+		select -r `ls -type "transform" ($origObj + "_chunk*")`;
+		catch(`polyInstallAction -cs polyCloseBorder`);
+		if (size(`ls -sl -fl`))
+		{
+			InvertSelection;
+			doDelete;
+		}
+		changeSelectMode -object;
+		select -cl;
+
+		$pieces = `ls -type "transform" ($origObj + "_chunk*")`;
+		for ($p in $pieces) polySetToFaceNormal $p;
+	}
+
+	// extrude
+	if ($extrude)
+	{
+		$pieces = `ls -type "transform" ($origObj + "_chunk*")`;
+		RS_extrudePieces($pieces);
+	}
+	
+	// center pivots
+	if ($cntrPiv)
+	{
+		select -r `ls -type "transform" ($origObj + "_chunk*")`;
+		CenterPivot;
+	}
+	
+	// delete unassigned shaders created by the script
+	string $allShadingGroups[] = `ls -type "shadingEngine" "voroShd*"`;
+	string $objects[], $unusedShaders[];
+	for ($sg in $allShadingGroups)
+	{
+	    // find objects
+	    $objects = `listConnections -type "mesh" $sg`;
+	    if (!size($objects))
+	    {
+	        // find shader
+	        $unusedShaders = `listConnections -type "lambert" $sg`;
+	        if (size($unusedShaders)) delete $unusedShaders;
+	        delete $sg;
+	    }
+	}
+	
+	select -cl;
+}
+
+
+global proc RS_extrudePieces(string $pieces[])
+{
+	int $keepHist = `checkBox -q -v vtf_check_hist`;
+	float $extrAmount = `floatFieldGrp -q -v1 vtf_float_extr`;
+	string $shape[];
+	
+	for ($p in $pieces)
+	{
+		$shape = `listRelatives -s $p`;
+		if (size($shape))
+		{
+			if (`objectType $shape[0]` == "mesh") 
+			{
+				polyExtrudeFacet -constructionHistory $keepHist -keepFacesTogether 0 -localTranslateZ ($extrAmount)
+					-pvx 0 -pvy 0 -pvz 0 -divisions 1 -twist 0 -taper 1 -off 0 -thickness 0 -smoothingAngle 30 $p;
+			}
+		}
+	}
+}
+
+
+global proc RS_extrudeSelectedPieces()
+{
+	int $cntrPiv = `checkBox -q -v vtf_check_piv`;
+	string $pieces[] = `ls -sl`;
+	RS_extrudePieces($pieces);
+	if ($cntrPiv)
+	{
+		select -r $pieces;
+		CenterPivot;
+	}
+}
+
+
+global proc RS_voroTexFrac_vtfPrefs()
+{
+	if(`window -exists RS_voroTexFrac_prefsWin`) deleteUI RS_voroTexFrac_prefsWin;
+	if(`windowPref -exists RS_voroTexFrac_prefsWin`) windowPref -r RS_voroTexFrac_prefsWin;
+	
+	int $tlc[] = `window -q -tlc RS_voroTexFrac_window`;
+	string $userDir = (`internalVar -usd` + "voronoiTextureFracture/fractureImages/");
+	string $sourceImages = (`workspace -q -act` + "/sourceimages/");
+	string $imagePath;
+	int $rb;
+	if (`optionVar -ex "SOuP_vtf_voroTexPath"`) $imagePath = `optionVar -q "SOuP_vtf_voroTexPath"`;
+	else $imagePath = $userDir;
+	if ($imagePath == $sourceImages) $rb = 1;
+	else if ($imagePath == $userDir) $rb = 2;
+	else $rb = 3;
+	
+	
+	window -t "Voronoi Texture Fracture - Preferences" -titleBar 1 -mnb 1 -mxb 0 -mb 1 
+			-tlb 0 -sizeable 1 -tlc ($tlc[0]+50) ($tlc[1]+50) RS_voroTexFrac_prefsWin;
+	
+	columnLayout;
+		separator -h 5 -style "none";
+		text -l "   >> Where do you want the temporary fracture maps to be stored?" -font "boldLabelFont";
+		separator -h 5 -style "none";
+		rowLayout -nc 2 -cw 1 25 -cw 2 200;
+			separator -w 25 -style "none";
+			radioButtonGrp -numberOfRadioButtons 3 -label "Preset:   " 
+				-labelArray3 "sourceimages" "user dir" "custom"
+				-cc "RS_voroTexFrac_changePathPreset"
+				-cw 1 75 -cw 2 125 -cw 3 100 -cw 4 100
+				-sl $rb vtf_radio_path; 
+		setParent..;
+		textFieldButtonGrp -label "Image Path:" -text $imagePath -buttonLabel "--> Browse.." 
+			-en 0 -cw 1 80
+			-bc "RS_voroTexFrac_setImagePath;" 
+			-cc "RS_voroTexFrac_changePath;" vtf_txtField_path;
+		separator -h 5 -style "none";
+		separator -w 400 -h 10 -style "in";
+		separator -h 5 -style "none";
+		text -l "   >> Fracture Map Resolution for Voronoi Textures : " -font "boldLabelFont";
+		separator -h 10 -style "none";
+		intFieldGrp -numberOfFields 2 -label "Resolution XY :" -extraLabel "px" 
+			-value1 (`optionVar -q "SOuP_vtf_texResX"`)
+			-value2 (`optionVar -q "SOuP_vtf_texResY"`)
+			-cw 2 50 -cw 3 50 
+			-cc "RS_voroTexFrac_changeTxRes" vtf_intFieldGrp_resXY;
+		separator -h 5 -style "none";
+		separator -w 400 -h 10 -style "in";
+		separator -h 5 -style "none";
+	setParent..;	
+	
+	showWindow RS_voroTexFrac_prefsWin;
+	
+	if ($rb == 3) textFieldButtonGrp -e -en 1 vtf_txtField_path;
+}
+
+
+global proc RS_voroTexFrac_changePathPreset()
+{
+	// find selected option
+	int $selRB = `radioButtonGrp -q -sl vtf_radio_path`;
+	string $imagePath;
+	
+	// find path
+	switch ($selRB)
+	{
+		case 1:
+			textFieldButtonGrp -e -en 0 vtf_txtField_path;
+			$imagePath = (`workspace -q -act` + "/sourceimages/");
+			// validate path & set optionVar
+			if (`filetest -d $imagePath`) 
+			{
+				optionVar -sv "SOuP_vtf_voroTexPath" $imagePath;
+				textFieldButtonGrp -e -tx $imagePath vtf_txtField_path;
+			}
+			else RS_voroTexFrac_warnWin("Sorry, I could not find your sourceimages folder!\n\nPlease SET a PROJECT or choose a different path preset!");
+		break;
+		
+		case 2:
+			$imagePath = (`internalVar -usd` + "voronoiTextureFracture/fractureImages/");
+			// validate path & set optionVar
+			if (`filetest -d $imagePath`) 
+			{
+				textFieldButtonGrp -e -en 0 vtf_txtField_path;
+				optionVar -sv "SOuP_vtf_voroTexPath" $imagePath;
+				textFieldButtonGrp -e -tx $imagePath vtf_txtField_path;
+			}
+			else 
+			{
+				textFieldButtonGrp -e -en 1 vtf_txtField_path;
+				RS_voroTexFrac_warnWin("Sorry, I could not find your user dir!\n\nPlease specify a custom path!");
+			}
+		break;
+
+		case 3:
+			textFieldButtonGrp -e -en 1 vtf_txtField_path;
+		break;
+	}	
+}
+
+
+global proc RS_voroTexFrac_changePath()
+{
+	string $imagePath = `textFieldButtonGrp -q -tx vtf_txtField_path`;
+	// validate path & set optionVar
+	if (`filetest -d $imagePath`) optionVar -sv "SOuP_vtf_voroTexPath" $imagePath;
+	else textFieldButtonGrp -e -tx "" vtf_txtField_path;
+}
+
+
+global proc RS_voroTexFrac_warnWin(string $message)
+{
+	confirmDialog -title "Warning!" -message $message;
+}
+
+
+global proc RS_voroTexFrac_setImagePath()
+{
+	string $imagePath = (`RS_voroTexFrac_pathBrowser("Pick a Path for temporary image files ... ")` + "/");
+	// validate path & set optionVar
+	if (`filetest -d $imagePath`) 
+	{
+		textFieldButtonGrp -e -tx $imagePath vtf_txtField_path;
+		optionVar -sv "SOuP_vtf_voroTexPath" $imagePath;
+	}
+	else textFieldButtonGrp -e -tx "" vtf_txtField_path;
+}
+
+
+global proc string RS_voroTexFrac_pathBrowser(string $text)
+{
+	string $imagePath[] = `fileDialog2 -cap ($text) -fm 3 -okc "Pick Folder"`;
+ 	return $imagePath[0];
+}
+
+
+global proc RS_voroTexFrac_changeTxRes()
+{
+	optionVar -iv "SOuP_vtf_texResX" (`intFieldGrp -q -v1 vtf_intFieldGrp_resXY`);
+	optionVar -iv "SOuP_vtf_texResY" (`intFieldGrp -q -v2 vtf_intFieldGrp_resXY`);
+}
+
+
+global proc RS_voroTexFrac_updateCheck()
+{
+	system("load http://www.creativecrash.com/maya/downloads/scripts-plugins/dynamics/c/voronoi-texture-fracture");
+}
+
+
+global proc RS_voroTexFrac_soupCheck()
+{
+	if (catch(`loadPlugin SOuP.mll`))
+	{
+		string $soupCheck = `confirmDialog -title "SOuP plug-in not found!" -message "Voronoi Fracturing will not be available without SOuP installed!   "
+	    -button "Get SOuP!" -button "  Use Image Fracturing only  " -defaultButton "Get SOuP!"
+	    -cancelButton "Cancel" -dismissString "Cancel"`;
+		if ($soupCheck == "Get SOuP!") system("load http://www.soup-dev.com");
+		radioButtonGrp -e -sl 2 -en1 0 vtf_radio_souce;
+		RS_voroTexFrac_changeSource; 
+	}
+}
+
+RS_voroTexFrac_GUI;

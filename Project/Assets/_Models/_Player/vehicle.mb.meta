@@ -1,0 +1,302 @@
+fileFormatVersion: 2
+guid: 5ed26d37d7c904f448a69df41f705049
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: NECK
+    100002: SHOULDER_LEFT
+    100004: ANKLE_LEFT
+    100006: ELBOW_RIGHT
+    100008: KNEE_LEFT
+    100010: HIP_LEFT 1
+    100012: WRIST_LEFT
+    100014: HIP_LEFT
+    100016: ROOT2
+    100018: _coat
+    100020: HAND_RIGHT
+    100022: ANKLE_LEFT 1
+    100024: _player1
+    100026: ANKLE_RIGHT
+    100028: WRIST_RIGHT
+    100030: HEAD
+    100032: HIP_CENTER 1
+    100034: SPINE 1
+    100036: Vehicle
+    100038: HIP_CENTER
+    100040: HIP_RIGHT
+    100042: HAND_LEFT
+    100044: HIP_RIGHT 1
+    100046: KNEE_RIGHT 1
+    100048: CHEST
+    100050: //RootNode
+    100052: KNEE_RIGHT
+    100054: SPINE
+    100056: ANKLE_RIGHT 1
+    100058: ELBOW_RIGHT 1
+    100060: WRIST_RIGHT 1
+    100062: SHOULDER_RIGHT
+    100064: CHEST 1
+    100066: _frame
+    100068: ELBOW_LEFT 1
+    100070: WRIST_LEFT 1
+    100072: _player2
+    100074: HAND_RIGHT 1
+    100076: ROOT1
+    100078: Sphere
+    100080: ELBOW_LEFT
+    100082: SHOULDER_LEFT 1
+    100084: Disc
+    100086: SHOULDER_RIGHT 1
+    100088: _rotator
+    100090: ikHandle1
+    100092: _coat 1
+    100094: _mesh 1
+    100096: ikHandle2
+    100098: KNEE_LEFT 1
+    100100: HAND_LEFT 1
+    100102: Frame
+    100104: _mesh
+    100106: NECK 1
+    100108: HEAD 1
+    100110: _creator
+    100112: _destroyer
+    400000: NECK
+    400002: SHOULDER_LEFT
+    400004: ANKLE_LEFT
+    400006: ELBOW_RIGHT
+    400008: KNEE_LEFT
+    400010: HIP_LEFT 1
+    400012: WRIST_LEFT
+    400014: HIP_LEFT
+    400016: ROOT2
+    400018: _coat
+    400020: HAND_RIGHT
+    400022: ANKLE_LEFT 1
+    400024: _player1
+    400026: ANKLE_RIGHT
+    400028: WRIST_RIGHT
+    400030: HEAD
+    400032: HIP_CENTER 1
+    400034: SPINE 1
+    400036: Vehicle
+    400038: HIP_CENTER
+    400040: HIP_RIGHT
+    400042: HAND_LEFT
+    400044: HIP_RIGHT 1
+    400046: KNEE_RIGHT 1
+    400048: CHEST
+    400050: //RootNode
+    400052: KNEE_RIGHT
+    400054: SPINE
+    400056: ANKLE_RIGHT 1
+    400058: ELBOW_RIGHT 1
+    400060: WRIST_RIGHT 1
+    400062: SHOULDER_RIGHT
+    400064: CHEST 1
+    400066: _frame
+    400068: ELBOW_LEFT 1
+    400070: WRIST_LEFT 1
+    400072: _player2
+    400074: HAND_RIGHT 1
+    400076: ROOT1
+    400078: Sphere
+    400080: ELBOW_LEFT
+    400082: SHOULDER_LEFT 1
+    400084: Disc
+    400086: SHOULDER_RIGHT 1
+    400088: _rotator
+    400090: ikHandle1
+    400092: _coat 1
+    400094: _mesh 1
+    400096: ikHandle2
+    400098: KNEE_LEFT 1
+    400100: HAND_LEFT 1
+    400102: Frame
+    400104: _mesh
+    400106: NECK 1
+    400108: HEAD 1
+    400110: _creator
+    400112: _destroyer
+    2300000: Sphere
+    2300002: Disc
+    2300004: Frame
+    3300000: Sphere
+    3300002: Disc
+    3300004: Frame
+    4300000: _coat
+    4300002: _mesh
+    4300004: _coat
+    4300006: _mesh
+    4300008: Frame
+    4300010: Sphere
+    4300012: Disc
+    7400000: spin2
+    7400002: spin1
+    7400004: strain1
+    7400006: strain2
+    7400008: idle
+    11100000: //RootNode
+    13700000: _coat
+    13700002: _coat 1
+    13700004: _mesh 1
+    13700006: _mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 1
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations:
+    - name: spin1
+      takeName: Take 001
+      firstFrame: 2
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      keepAdditionalBonesAnimation: 1
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      skeletonMaskElements: []
+    - name: spin2
+      takeName: Take 001
+      firstFrame: 51
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      keepAdditionalBonesAnimation: 1
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      skeletonMaskElements: []
+    - name: strain1
+      takeName: Take 001
+      firstFrame: 110
+      lastFrame: 121
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      keepAdditionalBonesAnimation: 1
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      skeletonMaskElements: []
+    - name: strain2
+      takeName: Take 001
+      firstFrame: 122
+      lastFrame: 133
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      keepAdditionalBonesAnimation: 1
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      skeletonMaskElements: []
+    - name: idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 1.10000002
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      keepAdditionalBonesAnimation: 1
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      skeletonMaskElements: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 1
+  userData: 

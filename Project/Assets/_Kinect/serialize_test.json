@@ -1,0 +1,50 @@
+{
+    "name": "stupid-wave",
+    "gestures": [{
+        "name": "raise-right-hand",
+        "constraints": [{
+            "joint_a": "HAND_RIGHT",
+            "joint_b": "SHOULDER_RIGHT",
+            "operation": "GREATER_THAN",
+            "relation": "COMPONENT_DISTANCE",
+            "val": {"x": -10, "y": 1.2, "z": -10}
+        }]
+    }, {
+        "name": "raise-left-hand",
+        "constraints": [{
+            "joint_a": "HAND_LEFT",
+            "joint_b": "SHOULDER_LEFT",
+            "operation": "GREATER_THAN",
+            "relation": "COMPONENT_DISTANCE",
+            "val": {"x": -10, "y": 1.2, "z": -10}
+        }]
+    }, {
+        "name": "complex gesture",
+        "constraints": [{
+            "joint_a": "ANKLE_LEFT",
+            "joint_b": "KNEE_LEFT",
+            "operation": "LESS_THAN_OR_EQUAL",
+            "relation": "ABS_COMPONENT_DISTANCE",
+            "val": {"x": -666.66, "y": 2023, "z": 0.2324322}
+        }, {
+            "joint_a": "HEAD",
+            "joint_b": "HIP_LEFT",
+            "operation": "NOT_EQUAL",
+            "relation": "DISTANCE",
+            "val": {"x": 1.23, "y": 4.56, "z": 7.89}
+        }]
+    }],
+    "time_windows": [
+        1, 
+        1, 
+        3.141
+    ],
+    "time_offsets": [
+        0, 
+        0, 
+        2.718282
+    ],
+    "index": 0,
+    "time_window_remaining": 0,
+    "time_offset_remaining": 0,
+}

@@ -1,0 +1,110 @@
+fileFormatVersion: 2
+guid: e993a2fd6d473eb48b222faeb88eb1ac
+ModelImporter:
+  serializedVersion: 14
+  fileIDToRecycleName:
+    100000: outer
+    100002: pCube3
+    100004: small
+    100006: pCylinder2
+    100008: big
+    100010: extra
+    100012: switches
+    100014: box
+    100016: pCube2
+    100018: base
+    100020: stems
+    100022: inner
+    100024: //RootNode
+    400000: outer
+    400002: pCube3
+    400004: small
+    400006: pCylinder2
+    400008: big
+    400010: extra
+    400012: switches
+    400014: box
+    400016: pCube2
+    400018: base
+    400020: stems
+    400022: inner
+    400024: //RootNode
+    2300000: outer
+    2300002: pCube3
+    2300004: small
+    2300006: pCylinder2
+    2300008: big
+    2300010: extra
+    2300012: box
+    2300014: pCube2
+    2300016: base
+    2300018: inner
+    3300000: outer
+    3300002: pCube3
+    3300004: small
+    3300006: pCylinder2
+    3300008: big
+    3300010: extra
+    3300012: box
+    3300014: pCube2
+    3300016: base
+    3300018: inner
+    4300000: box
+    4300002: base
+    4300004: big
+    4300006: small
+    4300008: pCylinder2
+    4300010: pCube2
+    4300012: pCube3
+    4300014: outer
+    4300016: inner
+    4300018: extra
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    generateAnimations: 4
+    bakeSimulation: 0
+    splitAnimations: 1
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMesh: 0
+    keepQuads: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  createAvatar: 0
+  userData: 

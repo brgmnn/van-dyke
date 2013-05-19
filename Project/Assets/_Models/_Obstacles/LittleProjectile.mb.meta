@@ -1,0 +1,104 @@
+fileFormatVersion: 2
+guid: 28d05ee7369fd32408898310822cbf6f
+ModelImporter:
+  serializedVersion: 14
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: shell
+    100004: endPoint
+    100006: L5
+    100008: L1
+    100010: wayPoints
+    100012: pSphere1
+    100014: L3
+    100016: L2
+    100018: L4
+    400000: //RootNode
+    400002: shell
+    400004: endPoint
+    400006: L5
+    400008: L1
+    400010: wayPoints
+    400012: pSphere1
+    400014: L3
+    400016: L2
+    400018: L4
+    2300000: //RootNode
+    2300002: shell
+    2300004: pSphere1
+    3300000: //RootNode
+    3300002: shell
+    3300004: pSphere1
+    4300000: LittleProjectile
+    4300002: shell
+    4300004: pSphere1
+    7400002: snitchy
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    generateAnimations: 4
+    bakeSimulation: 0
+    splitAnimations: 1
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations:
+    - name: snitchy
+      takeName: Take 001
+      firstFrame: 2
+      lastFrame: 90
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMesh: 0
+    keepQuads: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  createAvatar: 0
+  userData: 

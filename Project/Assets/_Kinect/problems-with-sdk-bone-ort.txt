@@ -1,0 +1,7 @@
+problems:
+	- angles are relative looking down the bone towards the joint we want to move. this poses a problem moving from +ve to -ve angles as unity does not have -ve angles and simple wraps it round causing bad twisting.
+	- difficulty in applying correct angle offsets.
+	- problem with arms for some reason. they are either twisted round the head or are held up high vertically (not from local position coords, from kinect sdk orientation data)
+	- seems like the arm joints are one position wrong in some cases. ie the elbow seems to act as the shoulder, wrist as elbow, hand as wrist.
+	- i am still not sure about whether to use local or world positioned joints in maya. however i am fairly sure it should be world positioned. local positioned seems to twist the whole skeleton 90deg about the y-axis
+	- when attempting to correct for locally positioned joints in maya by rotating individually rotated joints, it simply rotates all children joints in unity. i think rotating joints in maya although it may appear they are only for that joint, do infact apply to all children joints anyway

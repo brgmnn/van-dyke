@@ -1,0 +1,211 @@
+fileFormatVersion: 2
+guid: 868407da22d54744cbf2887a8025069b
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: wall1
+    100002: endPoint
+    100004: ceiling
+    100006: //RootNode
+    100008: wayPoints
+    100010: wall2
+    100012: L3
+    100014: floor
+    100016: L2
+    100018: L1
+    100020: ceiling1
+    100022: wall
+    100024: SectionCeiling
+    100026: L4
+    100028: L6
+    100030: L5
+    100032: nub1 3
+    100034: nub1 2
+    100036: laser1 2
+    100038: las3
+    100040: nub1 1
+    100042: laser1 1
+    100044: las2
+    100046: nub1
+    100048: laser1
+    100050: las1
+    100052: las4
+    100054: laser1 3
+    100056: group1
+    100058: main
+    100060: shell
+    100062: labLas
+    100064: place3dTexture1
+    100066: pPlane1
+    100068: pPlane2
+    100070: pPlane3
+    100072: pPlane4
+    400000: wall1
+    400002: endPoint
+    400004: ceiling
+    400006: //RootNode
+    400008: wayPoints
+    400010: wall2
+    400012: L3
+    400014: floor
+    400016: L2
+    400018: L1
+    400020: ceiling1
+    400022: wall
+    400024: SectionCeiling
+    400026: L4
+    400028: L6
+    400030: L5
+    400032: nub1 3
+    400034: nub1 2
+    400036: laser1 2
+    400038: las3
+    400040: nub1 1
+    400042: laser1 1
+    400044: las2
+    400046: nub1
+    400048: laser1
+    400050: las1
+    400052: las4
+    400054: laser1 3
+    400056: group1
+    400058: main
+    400060: shell
+    400062: labLas
+    400064: place3dTexture1
+    400066: pPlane1
+    400068: pPlane2
+    400070: pPlane3
+    400072: pPlane4
+    2300000: wall1
+    2300002: ceiling
+    2300004: wall2
+    2300006: floor
+    2300008: ceiling1
+    2300010: wall
+    2300012: nub1 3
+    2300014: nub1 2
+    2300016: laser1 2
+    2300018: nub1 1
+    2300020: laser1 1
+    2300022: nub1
+    2300024: laser1
+    2300026: laser1 3
+    2300028: shell
+    2300030: pPlane1
+    2300032: pPlane2
+    2300034: pPlane3
+    2300036: pPlane4
+    3300000: wall1
+    3300002: ceiling
+    3300004: wall2
+    3300006: floor
+    3300008: ceiling1
+    3300010: wall
+    3300012: nub1 3
+    3300014: nub1 2
+    3300016: laser1 2
+    3300018: nub1 1
+    3300020: laser1 1
+    3300022: nub1
+    3300024: laser1
+    3300026: laser1 3
+    3300028: shell
+    3300030: pPlane1
+    3300032: pPlane2
+    3300034: pPlane3
+    3300036: pPlane4
+    4300000: wall2
+    4300002: wall1
+    4300004: floor
+    4300006: ceiling
+    4300008: wall
+    4300010: ceiling1
+    4300012: laser1
+    4300014: nub1
+    4300016: laser1
+    4300018: nub1
+    4300020: laser1
+    4300022: nub1
+    4300024: laser1
+    4300026: nub1
+    4300028: shell
+    4300030: pPlane3
+    4300032: pPlane4
+    4300034: pPlane2
+    4300036: pPlane1
+    7400002: Move
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations:
+    - name: Move
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 160
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 1
+  userData: 

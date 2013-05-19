@@ -1,0 +1,6 @@
+
+    "joint_a": "HEAD",
+    "joint_b": "HIP_LEFT",
+    "operation": "NOT_EQUAL",
+    "relation": "DISTANCE",
+    "val": {"x": 1.23, "y": 4.56, "z": 7.89}

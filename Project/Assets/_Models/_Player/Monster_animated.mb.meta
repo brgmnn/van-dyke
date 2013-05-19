@@ -1,0 +1,226 @@
+fileFormatVersion: 2
+guid: 9d4a3236fc3159b4c8c4cc841f86c4bc
+ModelImporter:
+  serializedVersion: 14
+  fileIDToRecycleName:
+    100000: JT_ARM_LEFT
+    100002: JT_ARM_RIGHT
+    100004: JT_CHEST
+    100006: JT_ELBOW_LEFT
+    100008: JT_ELBOW_RIGHT
+    100010: JT_FOOT
+    100012: JT_HAND_LEFT
+    100014: JT_HAND_RIGHT
+    100016: JT_HEAD
+    100018: JT_HIP_CENTER
+    100020: JT_KNEE
+    100022: JT_LEG
+    100024: JT_NECK
+    100026: JT_SHOULDER_LEFT
+    100028: JT_SHOULDER_RIGHT
+    100030: JT_WAIST
+    100032: JT_WRIST_LEFT
+    100034: JT_WRIST_RIGHT
+    100036: Mesh
+    100038: //RootNode
+    100040: ROOT
+    400000: JT_ARM_LEFT
+    400002: JT_ARM_RIGHT
+    400004: JT_CHEST
+    400006: JT_ELBOW_LEFT
+    400008: JT_ELBOW_RIGHT
+    400010: JT_FOOT
+    400012: JT_HAND_LEFT
+    400014: JT_HAND_RIGHT
+    400016: JT_HEAD
+    400018: JT_HIP_CENTER
+    400020: JT_KNEE
+    400022: JT_LEG
+    400024: JT_NECK
+    400026: JT_SHOULDER_LEFT
+    400028: JT_SHOULDER_RIGHT
+    400030: JT_WAIST
+    400032: JT_WRIST_LEFT
+    400034: JT_WRIST_RIGHT
+    400036: Mesh
+    400038: //RootNode
+    400040: ROOT
+    4300000: Mesh
+    7400000: idle
+    7400002: little
+    7400004: grab
+    7400006: big
+    7400008: spawn
+    7400010: beamstream
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Mesh
+    13700002: ROOT
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    generateAnimations: 4
+    bakeSimulation: 0
+    splitAnimations: 1
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations:
+    - name: idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 38
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+    - name: little
+      takeName: Take 001
+      firstFrame: 45
+      lastFrame: 67
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+    - name: grab
+      takeName: Take 001
+      firstFrame: 68
+      lastFrame: 149
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+    - name: big
+      takeName: Take 001
+      firstFrame: 150
+      lastFrame: 201
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+    - name: spawn
+      takeName: Take 001
+      firstFrame: 202
+      lastFrame: 274
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+    - name: beamstream
+      takeName: Take 001
+      firstFrame: 275
+      lastFrame: 301
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMesh: 0
+    keepQuads: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  createAvatar: 0
+  userData: 

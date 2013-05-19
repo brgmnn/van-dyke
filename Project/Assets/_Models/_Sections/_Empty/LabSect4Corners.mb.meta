@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: c7e0eb2de241a81488f0d991d0ad0f59
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: labcorridorhusk:wall2
+    100002: labcorridorhusk:floor
+    100004: labcorridorhusk:wall1
+    100006: Lab4Corners 1
+    100008: L19
+    100010: L18
+    100012: L17
+    100014: L16
+    100016: L15
+    100018: L14
+    100020: L13
+    100022: L12
+    100024: L11
+    100026: L10
+    100028: L9
+    100030: L8
+    100032: L7
+    100034: L6
+    100036: L5
+    100038: L4
+    100040: L3
+    100042: L2
+    100044: L1
+    100046: wayPoints
+    100048: floor
+    100050: endPoint
+    100052: //RootNode
+    100054: floor 1
+    100056: shell
+    400000: labcorridorhusk:wall2
+    400002: labcorridorhusk:floor
+    400004: labcorridorhusk:wall1
+    400006: Lab4Corners 1
+    400008: L19
+    400010: L18
+    400012: L17
+    400014: L16
+    400016: L15
+    400018: L14
+    400020: L13
+    400022: L12
+    400024: L11
+    400026: L10
+    400028: L9
+    400030: L8
+    400032: L7
+    400034: L6
+    400036: L5
+    400038: L4
+    400040: L3
+    400042: L2
+    400044: L1
+    400046: wayPoints
+    400048: floor
+    400050: endPoint
+    400052: //RootNode
+    400054: floor 1
+    400056: shell
+    2300000: labcorridorhusk:wall2
+    2300002: labcorridorhusk:floor
+    2300004: labcorridorhusk:wall1
+    2300006: floor
+    2300008: floor 1
+    2300010: shell
+    3300000: labcorridorhusk:wall2
+    3300002: labcorridorhusk:floor
+    3300004: labcorridorhusk:wall1
+    3300006: floor
+    3300008: floor 1
+    3300010: shell
+    4300000: labcorridorhusk:wall2
+    4300002: labcorridorhusk:wall1
+    4300004: labcorridorhusk:floor
+    4300006: floor
+    4300008: floor
+    4300010: shell
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 1
+  userData: 

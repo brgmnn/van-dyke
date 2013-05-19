@@ -1,0 +1,92 @@
+fileFormatVersion: 2
+guid: 1fee9c5188941fb4e821482cf7dbd7bd
+ModelImporter:
+  serializedVersion: 14
+  fileIDToRecycleName:
+    100000: endPoint
+    100002: L1
+    100004: L10
+    100006: L11
+    100008: L12
+    100010: L13
+    100012: L2
+    100014: L3
+    100016: L4
+    100018: L5
+    100020: L6
+    100022: L7
+    100024: L8
+    100026: L9
+    100028: //RootNode
+    100030: shell
+    100032: wayPoints
+    400000: endPoint
+    400002: L1
+    400004: L10
+    400006: L11
+    400008: L12
+    400010: L13
+    400012: L2
+    400014: L3
+    400016: L4
+    400018: L5
+    400020: L6
+    400022: L7
+    400024: L8
+    400026: L9
+    400028: //RootNode
+    400030: shell
+    400032: wayPoints
+    2300000: shell
+    3300000: shell
+    4300000: shell
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    generateAnimations: 4
+    bakeSimulation: 0
+    splitAnimations: 1
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMesh: 0
+    keepQuads: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  createAvatar: 0
+  userData: 

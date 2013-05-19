@@ -1,0 +1,113 @@
+fileFormatVersion: 2
+guid: e1e8c02eced5eaf408809cec99b7caeb
+ModelImporter:
+  serializedVersion: 14
+  fileIDToRecycleName:
+    100000: wayPoints
+    100002: //RootNode
+    100004: wall2
+    100006: L5
+    100008: L2
+    100010: DoorLens
+    100012: wall1
+    100014: floor
+    100016: L3
+    100018: L7
+    100020: L1
+    100022: L4
+    100024: L6
+    100026: entrypad
+    100028: ceiling
+    100030: DoorFrame
+    100032: L8
+    100034: endPoint
+    100036: startPoint
+    400000: wayPoints
+    400002: //RootNode
+    400004: wall2
+    400006: L5
+    400008: L2
+    400010: DoorLens
+    400012: wall1
+    400014: floor
+    400016: L3
+    400018: L7
+    400020: L1
+    400022: L4
+    400024: L6
+    400026: entrypad
+    400028: ceiling
+    400030: DoorFrame
+    400032: L8
+    400034: endPoint
+    400036: startPoint
+    2300000: wall2
+    2300002: DoorLens
+    2300004: wall1
+    2300006: floor
+    2300008: entrypad
+    2300010: ceiling
+    2300012: DoorFrame
+    3300000: wall2
+    3300002: DoorLens
+    3300004: wall1
+    3300006: floor
+    3300008: entrypad
+    3300010: ceiling
+    3300012: DoorFrame
+    4300000: ceiling
+    4300002: floor
+    4300004: wall1
+    4300006: wall2
+    4300008: DoorFrame
+    4300010: DoorLens
+    4300012: entrypad
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    generateAnimations: 4
+    bakeSimulation: 0
+    splitAnimations: 1
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMesh: 0
+    keepQuads: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  createAvatar: 0
+  userData: 

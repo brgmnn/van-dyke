@@ -1,0 +1,371 @@
+fileFormatVersion: 2
+guid: eb5293859e6a8fa4cbbc22070c4bd8ab
+ModelImporter:
+  serializedVersion: 14
+  fileIDToRecycleName:
+    100000: door1
+    100002: doormain 1
+    100004: keypad 3
+    100006: window 3
+    100008: frame 3
+    100010: door2
+    100012: doormain 2
+    100014: window 1
+    100016: frame 1
+    100018: handle 2
+    100020: keypad 2
+    100022: keypad 1
+    100024: frame
+    100026: //RootNode
+    100028: window
+    100030: door3
+    100032: window 2
+    100034: handle
+    100036: shell
+    100038: handle 1
+    100040: keypad
+    100042: doormain
+    100044: door
+    100046: frame 2
+    100048: doormain 3
+    100050: handle 3
+    100052: ObsVeh:ObsVeh:strut2
+    100054: ObsVeh:ObsVeh:strut3
+    100056: ObsVeh:ObsVeh:console
+    100058: ObsVeh:ObsVeh:strut4
+    100060: ObsVeh:ObsVeh:fasten5
+    100062: ObsVeh:wheels
+    100064: ObsVeh:ObsVeh:wheelaxle1
+    100066: ObsVeh:ObsVeh:fasten3
+    100068: ObsVeh:ObsVeh:fasten4
+    100070: ObsVeh:car
+    100072: ObsVeh:light1
+    100074: ObsVeh:light2
+    100076: ObsVeh:seatcushion
+    100078: ObsVeh:ObsVeh:fasten1
+    100080: ObsVeh:ObsVeh:wheelaxle2
+    100082: ObsVeh:body
+    100084: ObsVeh:ObsVeh:Rcage1
+    100086: ObsVeh:ObsVeh:LCage
+    100088: ObsVeh:ObsVeh:body
+    100090: ObsVeh:ObsVeh:steerwh
+    100092: L4
+    100094: keypad2
+    100096: doormain1
+    100098: keypad1
+    100100: handle2
+    100102: frame1
+    100104: L2
+    100106: L5
+    100108: endPoint
+    100110: window1
+    100112: window2
+    100114: L1
+    100116: wayPoints
+    100118: handle1
+    100120: L3
+    100122: frame2
+    100124: DoorsSect
+    100126: doormain2
+    100128: main
+    100130: door 2
+    100132: BigDoor:frame
+    100134: BigDoor:door
+    100136: door 1
+    400000: door1
+    400002: doormain 1
+    400004: keypad 3
+    400006: window 3
+    400008: frame 3
+    400010: door2
+    400012: doormain 2
+    400014: window 1
+    400016: frame 1
+    400018: handle 2
+    400020: keypad 2
+    400022: keypad 1
+    400024: frame
+    400026: //RootNode
+    400028: window
+    400030: door3
+    400032: window 2
+    400034: handle
+    400036: shell
+    400038: handle 1
+    400040: keypad
+    400042: doormain
+    400044: door
+    400046: frame 2
+    400048: doormain 3
+    400050: handle 3
+    400052: ObsVeh:ObsVeh:strut2
+    400054: ObsVeh:ObsVeh:strut3
+    400056: ObsVeh:ObsVeh:console
+    400058: ObsVeh:ObsVeh:strut4
+    400060: ObsVeh:ObsVeh:fasten5
+    400062: ObsVeh:wheels
+    400064: ObsVeh:ObsVeh:wheelaxle1
+    400066: ObsVeh:ObsVeh:fasten3
+    400068: ObsVeh:ObsVeh:fasten4
+    400070: ObsVeh:car
+    400072: ObsVeh:light1
+    400074: ObsVeh:light2
+    400076: ObsVeh:seatcushion
+    400078: ObsVeh:ObsVeh:fasten1
+    400080: ObsVeh:ObsVeh:wheelaxle2
+    400082: ObsVeh:body
+    400084: ObsVeh:ObsVeh:Rcage1
+    400086: ObsVeh:ObsVeh:LCage
+    400088: ObsVeh:ObsVeh:body
+    400090: ObsVeh:ObsVeh:steerwh
+    400092: L4
+    400094: keypad2
+    400096: doormain1
+    400098: keypad1
+    400100: handle2
+    400102: frame1
+    400104: L2
+    400106: L5
+    400108: endPoint
+    400110: window1
+    400112: window2
+    400114: L1
+    400116: wayPoints
+    400118: handle1
+    400120: L3
+    400122: frame2
+    400124: DoorsSect
+    400126: doormain2
+    400128: main
+    400130: door 2
+    400132: BigDoor:frame
+    400134: BigDoor:door
+    400136: door 1
+    2300000: doormain 1
+    2300002: keypad 3
+    2300004: window 3
+    2300006: frame 3
+    2300008: doormain 2
+    2300010: window 1
+    2300012: frame 1
+    2300014: handle 2
+    2300016: keypad 2
+    2300018: keypad 1
+    2300020: frame
+    2300022: window
+    2300024: window 2
+    2300026: handle
+    2300028: shell
+    2300030: handle 1
+    2300032: keypad
+    2300034: doormain
+    2300036: frame 2
+    2300038: doormain 3
+    2300040: handle 3
+    2300042: ObsVeh:ObsVeh:strut2
+    2300044: ObsVeh:ObsVeh:strut3
+    2300046: ObsVeh:ObsVeh:console
+    2300048: ObsVeh:ObsVeh:strut4
+    2300050: ObsVeh:ObsVeh:fasten5
+    2300052: ObsVeh:ObsVeh:wheelaxle1
+    2300054: ObsVeh:ObsVeh:fasten3
+    2300056: ObsVeh:ObsVeh:fasten4
+    2300058: ObsVeh:light1
+    2300060: ObsVeh:light2
+    2300062: ObsVeh:seatcushion
+    2300064: ObsVeh:ObsVeh:fasten1
+    2300066: ObsVeh:ObsVeh:wheelaxle2
+    2300068: ObsVeh:ObsVeh:Rcage1
+    2300070: ObsVeh:ObsVeh:LCage
+    2300072: ObsVeh:ObsVeh:body
+    2300074: ObsVeh:ObsVeh:steerwh
+    2300076: keypad2
+    2300078: doormain1
+    2300080: keypad1
+    2300082: handle2
+    2300084: frame1
+    2300086: window1
+    2300088: window2
+    2300090: handle1
+    2300092: frame2
+    2300094: doormain2
+    2300096: door 2
+    2300098: BigDoor:frame
+    2300100: BigDoor:door
+    2300102: door 1
+    3300000: doormain 1
+    3300002: keypad 3
+    3300004: window 3
+    3300006: frame 3
+    3300008: doormain 2
+    3300010: window 1
+    3300012: frame 1
+    3300014: handle 2
+    3300016: keypad 2
+    3300018: keypad 1
+    3300020: frame
+    3300022: window
+    3300024: window 2
+    3300026: handle
+    3300028: shell
+    3300030: handle 1
+    3300032: keypad
+    3300034: doormain
+    3300036: frame 2
+    3300038: doormain 3
+    3300040: handle 3
+    3300042: ObsVeh:ObsVeh:strut2
+    3300044: ObsVeh:ObsVeh:strut3
+    3300046: ObsVeh:ObsVeh:console
+    3300048: ObsVeh:ObsVeh:strut4
+    3300050: ObsVeh:ObsVeh:fasten5
+    3300052: ObsVeh:ObsVeh:wheelaxle1
+    3300054: ObsVeh:ObsVeh:fasten3
+    3300056: ObsVeh:ObsVeh:fasten4
+    3300058: ObsVeh:light1
+    3300060: ObsVeh:light2
+    3300062: ObsVeh:seatcushion
+    3300064: ObsVeh:ObsVeh:fasten1
+    3300066: ObsVeh:ObsVeh:wheelaxle2
+    3300068: ObsVeh:ObsVeh:Rcage1
+    3300070: ObsVeh:ObsVeh:LCage
+    3300072: ObsVeh:ObsVeh:body
+    3300074: ObsVeh:ObsVeh:steerwh
+    3300076: keypad2
+    3300078: doormain1
+    3300080: keypad1
+    3300082: handle2
+    3300084: frame1
+    3300086: window1
+    3300088: window2
+    3300090: handle1
+    3300092: frame2
+    3300094: doormain2
+    3300096: door 2
+    3300098: BigDoor:frame
+    3300100: BigDoor:door
+    3300102: door 1
+    4300000: doormain
+    4300002: handle
+    4300004: keypad
+    4300006: window
+    4300008: frame
+    4300010: shell
+    4300012: doormain
+    4300014: handle
+    4300016: keypad
+    4300018: window
+    4300020: frame
+    4300022: doormain
+    4300024: handle
+    4300026: keypad
+    4300028: window
+    4300030: frame
+    4300032: doormain
+    4300034: handle
+    4300036: keypad
+    4300038: window
+    4300040: frame
+    4300042: ObsVeh:light1
+    4300044: ObsVeh:light2
+    4300046: ObsVeh:seatcushion
+    4300048: ObsVeh:ObsVeh:fasten1
+    4300050: ObsVeh:ObsVeh:wheelaxle2
+    4300052: ObsVeh:ObsVeh:wheelaxle1
+    4300054: ObsVeh:ObsVeh:fasten3
+    4300056: ObsVeh:ObsVeh:fasten4
+    4300058: ObsVeh:ObsVeh:fasten5
+    4300060: ObsVeh:ObsVeh:Rcage1
+    4300062: ObsVeh:ObsVeh:LCage
+    4300064: ObsVeh:ObsVeh:body
+    4300066: ObsVeh:ObsVeh:console
+    4300068: ObsVeh:ObsVeh:steerwh
+    4300070: ObsVeh:ObsVeh:strut2
+    4300072: ObsVeh:ObsVeh:strut3
+    4300074: ObsVeh:ObsVeh:strut4
+    4300076: frame1
+    4300078: window1
+    4300080: keypad1
+    4300082: handle1
+    4300084: doormain1
+    4300086: frame2
+    4300088: window2
+    4300090: keypad2
+    4300092: handle2
+    4300094: doormain2
+    4300096: BigDoor:frame
+    4300098: BigDoor:door
+    4300100: door
+    4300102: door
+    7400002: Magnet
+    7400004: Take 0010
+    7400006: magnet
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    generateAnimations: 4
+    bakeSimulation: 0
+    splitAnimations: 1
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations:
+    - name: magnet
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 96
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMesh: 0
+    keepQuads: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  createAvatar: 0
+  userData: 

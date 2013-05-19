@@ -1,0 +1,134 @@
+fileFormatVersion: 2
+guid: d44be8c1c7257ac458a215e8da5c402b
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: cafe
+    100002: counter
+    100004: counter1
+    100006: endPoint
+    100008: L1
+    100010: L2
+    100012: L3
+    100014: L4
+    100016: L5
+    100018: L6
+    100020: L7
+    100022: L8
+    100024: L9
+    100026: //RootNode
+    100028: monitor
+    100030: register
+    100032: salecount
+    100034: shelf1
+    100036: shelf2
+    100038: shelf3
+    100040: shell
+    100042: wayPoints
+    100044: LabCafe
+    100046: place3dTexture1
+    100048: place3dTexture2
+    400000: cafe
+    400002: counter
+    400004: counter1
+    400006: endPoint
+    400008: L1
+    400010: L2
+    400012: L3
+    400014: L4
+    400016: L5
+    400018: L6
+    400020: L7
+    400022: L8
+    400024: L9
+    400026: //RootNode
+    400028: monitor
+    400030: register
+    400032: salecount
+    400034: shelf1
+    400036: shelf2
+    400038: shelf3
+    400040: shell
+    400042: wayPoints
+    400044: LabCafe
+    400046: place3dTexture1
+    400048: place3dTexture2
+    2300000: counter
+    2300002: counter1
+    2300004: monitor
+    2300006: register
+    2300008: salecount
+    2300010: shelf1
+    2300012: shelf2
+    2300014: shelf3
+    2300016: shell
+    3300000: counter
+    3300002: counter1
+    3300004: monitor
+    3300006: register
+    3300008: salecount
+    3300010: shelf1
+    3300012: shelf2
+    3300014: shelf3
+    3300016: shell
+    4300000: counter
+    4300002: salecount
+    4300004: register
+    4300006: monitor
+    4300008: shelf1
+    4300010: shelf2
+    4300012: shelf3
+    4300014: counter1
+    4300016: shell
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 1
+  userData: 

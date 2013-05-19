@@ -1,0 +1,19 @@
+workspace.mel
+*.unityproj
+*.pidb
+*.userprefs
+Keyboard.meta
+# Project/ProjectSettings
+Project/ProjectSettings/EditorSettings.asset
+.DS_Store
+Project/kinect-server.log
+Project/Temp/*
+Project/Library/*
+Project/*.csproj
+Project/*.sln
+Project/Assets/_Dev/*
+Project/Assets/_Dev.meta
+bin/
+
+# Visual C# KinectSkeletonServer files
+KinectSkeletonServer/obj/*

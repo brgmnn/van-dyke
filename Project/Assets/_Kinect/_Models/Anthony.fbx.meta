@@ -1,0 +1,107 @@
+fileFormatVersion: 2
+guid: b350fc2a4cee41b4daf4d4be7ec63fd6
+ModelImporter:
+  serializedVersion: 14
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: root
+    100004: l_foot
+    100006: l_finger
+    100008: neck
+    100010: l_arm
+    100012: clavicula
+    100014: r_hand
+    100016: r_arm
+    100018: l_knee
+    100020: r_finger
+    100022: Mesh
+    100024: r_knee
+    100026: head
+    100028: r_foot
+    100030: r_elbow
+    100032: l_leg
+    100034: l_toe
+    100036: l_heel
+    100038: r_leg
+    100040: l_hand
+    100042: l_elbow
+    100044: r_heel
+    100046: torso
+    100048: r_toe
+    400000: //RootNode
+    400002: root
+    400004: l_foot
+    400006: l_finger
+    400008: neck
+    400010: l_arm
+    400012: clavicula
+    400014: r_hand
+    400016: r_arm
+    400018: l_knee
+    400020: r_finger
+    400022: Mesh
+    400024: r_knee
+    400026: head
+    400028: r_foot
+    400030: r_elbow
+    400032: l_leg
+    400034: l_toe
+    400036: l_heel
+    400038: r_leg
+    400040: l_hand
+    400042: l_elbow
+    400044: r_heel
+    400046: torso
+    400048: r_toe
+    2300000: Mesh
+    3300000: Mesh
+    4300000: Mesh
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    generateAnimations: 4
+    bakeSimulation: 0
+    splitAnimations: 1
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMesh: 0
+    keepQuads: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  createAvatar: 0
+  userData: 

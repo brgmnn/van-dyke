@@ -1,0 +1,85 @@
+SOuP (plug-ins for Maya) © 2011 Peter Shipkov
+This software is provided with absolutely no warranty.
+It can be used for commercial projects, but cannot be
+modified or redistributed.
+
+installation:
+-------------
+Copy all .xpm files to /home/user/maya/20xx/prefs/icons/
+or another location that Maya scans for icons.
+Launch Maya, load the shelf and then the plug-in.
+
+OSX: unzip QtCore.framework.zip located in directory
+"opensource" in the SOuP archive to /System/Library/Frameworks/.
+
+Node IDs:
+------------------------------------
+MUSCLE                    0x00115740
+TENSIONMAP                0x00115741
+GROUP                     0x00115742
+BOUNDINGOBJECT            0x00115743
+OBJGRPTOCOMPLIST          0x00115744
+COMPLISTTOOBJGRP          0x00115745
+PEAK                      0x00115746
+SKINWEIGHTSPROXIMITY      0x00115747
+ARRAYTOMULTI              0x00115748
+POINT                     0x00115749
+SMARTWRAP                 0x0011574A
+DISPLAYCOMPONENTS         0x0011574B
+BOUNDINGOBJECTMANIP       0x0011574C
+TEXTURETOARRAY            0x0011574D
+ARRAYTOPOINTATTRIBUTE     0x0011574E
+REMAPARRAY                0x0011574F
+ATTRIBUTETRANSFER         0x00115750
+MULTIATTRIBUTETRANSFER    0x00115751
+POINTCLOUDFLUIDEMITTER    0x00115752
+POINTCLOUDFIELD           0x00115753
+POINTATTRIBUTETOARRAY     0x00115754
+TIMEOFFSET                0x00115755
+MULTITOARRAY              0x00115756
+BOUND                     0x00115757
+COMPUTEVELOCITY           0x00115758
+MIRRORPLANE               0x00115759
+FLUIDATTRIBUTETOARRAY     0x0011575A
+ARRAYTOPOINTCOLOR         0x0011575B
+POINTCLOUDTOCURVE         0x0011575C
+TRAJECTORY                0x0011575D
+VERTEXCONSTRAINT          0x0011575E
+ARRAYTOARRAY              0x0011575F
+DISPLAYATTRIBUTES         0x00115760
+ARRAYDATACONTAINER        0x00115761
+SCATTER                   0x00115762
+SHATTER                   0x00115763
+ARRAYTODYNARRAYS          0x00115764
+RGBATOCOLORANDALPHA       0x00115765
+UPRESFLUID                0x00115766
+PFXTOARRAY                0x00115767
+PROJECTIONPLANE           0x00115768
+RAYPROJECT                0x00115769
+RETARGET                  0x0011576A
+POINTSONMESHINFO          0x0011576B
+CAGE                      0x0011576C
+VORONOITEXTURE            0x0011576D
+ARRAYTOTEXTURE            0x0011576E
+DISPLAYDRIVER             0x0011576F
+SMOOTH                    0x00115770
+PYEXPRESSION              0x00115771
+MAPTOMESH                 0x00115772
+MESHTOMAP                 0x00115773
+POINTCLOUDTOMULTICURVE    0x00115774
+ARRAYBLEND                0x00115775
+COMPONENTTOCOMPONENT      0x00115776
+SPLITRGBA                 0x00115777
+RETARGETSIMPLE            0x00115778
+CREATEARRAY               0x00115779
+POINTCLOUDPARTICLEEMITTER 0x00115780
+BMESH                     0x0011578A
+SHELL                     0x0011578B
+RESIZEARRAY               0x0011578C
+TENSIONMAPSIMPLE          0x0011578D
+POINTCLOUDTOMESH          0x0011578E
+TRANSFORMSTOARRAYS        0x0011578F
+COCOON                    0x00115790
+TENSIONBLENDSHAPE         0x0011579A
+UVTENSION                 0x0011579B
+FACIALSYSTEM              0x0011579C

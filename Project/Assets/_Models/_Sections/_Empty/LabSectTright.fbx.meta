@@ -1,0 +1,166 @@
+fileFormatVersion: 2
+guid: cd3514291be698d41b21519b38f914bf
+ModelImporter:
+  serializedVersion: 14
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: L8
+    100004: L6
+    100006: L5
+    100008: L4
+    100010: L3
+    100012: L2
+    100014: L1
+    100016: wayPoints
+    100018: wall2 2
+    100020: wall1 2
+    100022: floor 2
+    100024: wall1
+    100026: L7
+    100028: ceiling 2
+    100030: LsectStraight2
+    100032: wall2 1
+    100034: wall1 1
+    100036: LsectStraight1
+    100038: wall2
+    100040: floor 1
+    100042: ceiling 1
+    100044: floor
+    100046: ceiling
+    100048: L9
+    100050: LsectStraight
+    100052: endPoint
+    100054: wall3
+    100056: wall4
+    100058: ceiling1
+    100060: floor1
+    100062: L10
+    400000: //RootNode
+    400002: L8
+    400004: L6
+    400006: L5
+    400008: L4
+    400010: L3
+    400012: L2
+    400014: L1
+    400016: wayPoints
+    400018: wall2 2
+    400020: wall1 2
+    400022: floor 2
+    400024: wall1
+    400026: L7
+    400028: ceiling 2
+    400030: LsectStraight2
+    400032: wall2 1
+    400034: wall1 1
+    400036: LsectStraight1
+    400038: wall2
+    400040: floor 1
+    400042: ceiling 1
+    400044: floor
+    400046: ceiling
+    400048: L9
+    400050: LsectStraight
+    400052: endPoint
+    400054: wall3
+    400056: wall4
+    400058: ceiling1
+    400060: floor1
+    400062: L10
+    2300000: wall2 2
+    2300002: wall1 2
+    2300004: floor 2
+    2300006: wall1
+    2300008: ceiling 2
+    2300010: wall2 1
+    2300012: wall1 1
+    2300014: wall2
+    2300016: floor 1
+    2300018: ceiling 1
+    2300020: floor
+    2300022: ceiling
+    2300024: wall3
+    2300026: wall4
+    2300028: ceiling1
+    2300030: floor1
+    3300000: wall2 2
+    3300002: wall1 2
+    3300004: floor 2
+    3300006: wall1
+    3300008: ceiling 2
+    3300010: wall2 1
+    3300012: wall1 1
+    3300014: wall2
+    3300016: floor 1
+    3300018: ceiling 1
+    3300020: floor
+    3300022: ceiling
+    3300024: wall3
+    3300026: wall4
+    3300028: ceiling1
+    3300030: floor1
+    4300000: ceiling
+    4300002: floor
+    4300004: wall1
+    4300006: wall2
+    4300008: ceiling
+    4300010: floor
+    4300012: wall1
+    4300014: wall2
+    4300016: ceiling
+    4300018: floor
+    4300020: wall1
+    4300022: wall2
+    4300024: ceiling1
+    4300026: floor1
+    4300028: wall3
+    4300030: wall4
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    generateAnimations: 4
+    bakeSimulation: 0
+    splitAnimations: 1
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMesh: 0
+    keepQuads: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  createAvatar: 0
+  userData: 

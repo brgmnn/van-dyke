@@ -1,0 +1,296 @@
+fileFormatVersion: 2
+guid: 03d1845d24cff43ce97993a85be4a08b
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: destroyWallEnd
+    100002: destroyWallStart
+    100004: DoorLens
+    100006: endPoint
+    100008: endPoint 1
+    100010: Iris_door
+    100012: joint10
+    100014: joint11
+    100016: joint12
+    100018: joint13
+    100020: joint14
+    100022: joint15
+    100024: joint16
+    100026: joint17
+    100028: joint18
+    100030: joint19
+    100032: joint2
+    100034: joint20
+    100036: joint21
+    100038: joint22
+    100040: joint23
+    100042: joint24
+    100044: joint25
+    100046: joint26
+    100048: joint27
+    100050: joint28
+    100052: joint29
+    100054: joint3
+    100056: joint30
+    100058: joint31
+    100060: joint32
+    100062: joint33
+    100064: joint34
+    100066: joint35
+    100068: joint36
+    100070: joint37
+    100072: joint38
+    100074: joint39
+    100076: joint4
+    100078: joint40
+    100080: joint41
+    100082: joint5
+    100084: joint6
+    100086: joint7
+    100088: joint8
+    100090: joint9
+    100092: Joints
+    100094: L1
+    100096: L1 1
+    100098: L2
+    100100: L2 1
+    100102: L20
+    100104: L21
+    100106: L22
+    100108: L23
+    100110: L24
+    100112: L25
+    100114: L26
+    100116: L27
+    100118: L28
+    100120: L29
+    100122: L3
+    100124: L3 1
+    100126: L4
+    100128: L4 1
+    100130: L5
+    100132: L6
+    100134: L7
+    100136: L8
+    100138: //RootNode
+    100140: Section
+    100142: SectionS
+    100144: shell
+    100146: superchargeEnd
+    100148: superchargeStart
+    100150: transform1
+    100152: wayPoints
+    100154: wayPoints 1
+    100156: weakWall
+    400000: destroyWallEnd
+    400002: destroyWallStart
+    400004: DoorLens
+    400006: endPoint
+    400008: endPoint 1
+    400010: Iris_door
+    400012: joint10
+    400014: joint11
+    400016: joint12
+    400018: joint13
+    400020: joint14
+    400022: joint15
+    400024: joint16
+    400026: joint17
+    400028: joint18
+    400030: joint19
+    400032: joint2
+    400034: joint20
+    400036: joint21
+    400038: joint22
+    400040: joint23
+    400042: joint24
+    400044: joint25
+    400046: joint26
+    400048: joint27
+    400050: joint28
+    400052: joint29
+    400054: joint3
+    400056: joint30
+    400058: joint31
+    400060: joint32
+    400062: joint33
+    400064: joint34
+    400066: joint35
+    400068: joint36
+    400070: joint37
+    400072: joint38
+    400074: joint39
+    400076: joint4
+    400078: joint40
+    400080: joint41
+    400082: joint5
+    400084: joint6
+    400086: joint7
+    400088: joint8
+    400090: joint9
+    400092: Joints
+    400094: L1
+    400096: L1 1
+    400098: L2
+    400100: L2 1
+    400102: L20
+    400104: L21
+    400106: L22
+    400108: L23
+    400110: L24
+    400112: L25
+    400114: L26
+    400116: L27
+    400118: L28
+    400120: L29
+    400122: L3
+    400124: L3 1
+    400126: L4
+    400128: L4 1
+    400130: L5
+    400132: L6
+    400134: L7
+    400136: L8
+    400138: //RootNode
+    400140: Section
+    400142: SectionS
+    400144: shell
+    400146: superchargeEnd
+    400148: superchargeStart
+    400150: transform1
+    400152: wayPoints
+    400154: wayPoints 1
+    400156: weakWall
+    2300000: destroyWallEnd
+    2300002: destroyWallStart
+    2300004: shell
+    2300006: superchargeEnd
+    2300008: superchargeStart
+    3300000: destroyWallEnd
+    3300002: destroyWallStart
+    3300004: shell
+    3300006: superchargeEnd
+    3300008: superchargeStart
+    4300000: L20
+    4300002: L21
+    4300004: L22
+    4300006: L23
+    4300008: L24
+    4300010: L25
+    4300012: L26
+    4300014: L27
+    4300016: L28
+    4300018: L29
+    4300020: superchargeStart
+    4300022: destroyWallStart
+    4300024: destroyWallEnd
+    4300026: superchargeEnd
+    4300028: shell
+    7400000: supercharge
+    7400002: destroy
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: L20
+    13700002: L21
+    13700004: L22
+    13700006: L23
+    13700008: L24
+    13700010: L25
+    13700012: L26
+    13700014: L27
+    13700016: L28
+    13700018: L29
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations:
+    - name: supercharge
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      keepAdditionalBonesAnimation: 1
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      skeletonMaskElements: []
+    - name: destroy
+      takeName: Take 001
+      firstFrame: 41
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      keepAdditionalBonesAnimation: 1
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      skeletonMaskElements: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 1
+  userData: 

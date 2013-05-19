@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 0712988a74bb8704e8f8565916c47382
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: BoxyThing1
+    100002: BoxyThing1 1
+    100004: BoxyThing2
+    100006: BoxyThing2 1
+    100008: endPoint
+    100010: L1
+    100012: L10
+    100014: L11
+    100016: L12
+    100018: L13
+    100020: L2
+    100022: L3
+    100024: L4
+    100026: L5
+    100028: L6
+    100030: L7
+    100032: L8
+    100034: L9
+    100036: //RootNode
+    100038: LHCPipe1
+    100040: LHCPipe2
+    100042: LHCPipe3
+    100044: LHCPipe4
+    100046: LHCPipe:BoxyThing1
+    100048: LHCPipe:BoxyThing2
+    100050: LHCPipe:pCube1
+    100052: LHCPipe:pCube1 1
+    100054: LHCPipe:pCube1 2
+    100056: LHCPipe:pCube2
+    100058: LHCPipe:pCube2 1
+    100060: LHCPipe:pCube2 2
+    100062: LHCPipe:pCube3
+    100064: LHCPipe:pCube3 1
+    100066: LHCPipe:pCylinder2
+    100068: LHCPipe:pCylinder2 1
+    100070: LHCPipe:pCylinder3
+    100072: LHCPipe:pCylinder3 1
+    100074: LHCPipe:polySurface1
+    100076: LHCPipe:polySurface1 1
+    100078: LHCPipe:polySurface1 2
+    100080: LHCPipe:polySurface2
+    100082: LHCPipe:polySurface2 1
+    100084: LHCPipe:polySurface2 2
+    100086: LHCPipe:Stand1
+    100088: LHCPipe:Stand2
+    100090: LHCPipe:Stand3
+    100092: pCube1
+    100094: pCube1 1
+    100096: pCube1 2
+    100098: pCube1 3
+    100100: pCube1 4
+    100102: pCube2
+    100104: pCube2 1
+    100106: pCube2 2
+    100108: pCube2 3
+    100110: pCube2 4
+    100112: pCube3
+    100114: pCube3 1
+    100116: pCube3 2
+    100118: pCylinder2
+    100120: pCylinder2 1
+    100122: pCylinder2 2
+    100124: pCylinder3
+    100126: pCylinder3 1
+    100128: pCylinder3 2
+    100130: polySurface1
+    100132: polySurface1 1
+    100134: polySurface1 2
+    100136: polySurface1 3
+    100138: polySurface1 4
+    100140: polySurface2
+    100142: polySurface2 1
+    100144: polySurface2 2
+    100146: polySurface2 3
+    100148: polySurface2 4
+    100150: polySurface4
+    100152: shell
+    100154: Stand1
+    100156: Stand1 1
+    100158: Stand2
+    100160: Stand2 1
+    100162: Stand3
+    100164: Stand3 1
+    100166: wayPoints
+    100168: pipe
+    400000: BoxyThing1
+    400002: BoxyThing1 1
+    400004: BoxyThing2
+    400006: BoxyThing2 1
+    400008: endPoint
+    400010: L1
+    400012: L10
+    400014: L11
+    400016: L12
+    400018: L13
+    400020: L2
+    400022: L3
+    400024: L4
+    400026: L5
+    400028: L6
+    400030: L7
+    400032: L8
+    400034: L9
+    400036: //RootNode
+    400038: LHCPipe1
+    400040: LHCPipe2
+    400042: LHCPipe3
+    400044: LHCPipe4
+    400046: LHCPipe:BoxyThing1
+    400048: LHCPipe:BoxyThing2
+    400050: LHCPipe:pCube1
+    400052: LHCPipe:pCube1 1
+    400054: LHCPipe:pCube1 2
+    400056: LHCPipe:pCube2
+    400058: LHCPipe:pCube2 1
+    400060: LHCPipe:pCube2 2
+    400062: LHCPipe:pCube3
+    400064: LHCPipe:pCube3 1
+    400066: LHCPipe:pCylinder2
+    400068: LHCPipe:pCylinder2 1
+    400070: LHCPipe:pCylinder3
+    400072: LHCPipe:pCylinder3 1
+    400074: LHCPipe:polySurface1
+    400076: LHCPipe:polySurface1 1
+    400078: LHCPipe:polySurface1 2
+    400080: LHCPipe:polySurface2
+    400082: LHCPipe:polySurface2 1
+    400084: LHCPipe:polySurface2 2
+    400086: LHCPipe:Stand1
+    400088: LHCPipe:Stand2
+    400090: LHCPipe:Stand3
+    400092: pCube1
+    400094: pCube1 1
+    400096: pCube1 2
+    400098: pCube1 3
+    400100: pCube1 4
+    400102: pCube2
+    400104: pCube2 1
+    400106: pCube2 2
+    400108: pCube2 3
+    400110: pCube2 4
+    400112: pCube3
+    400114: pCube3 1
+    400116: pCube3 2
+    400118: pCylinder2
+    400120: pCylinder2 1
+    400122: pCylinder2 2
+    400124: pCylinder3
+    400126: pCylinder3 1
+    400128: pCylinder3 2
+    400130: polySurface1
+    400132: polySurface1 1
+    400134: polySurface1 2
+    400136: polySurface1 3
+    400138: polySurface1 4
+    400140: polySurface2
+    400142: polySurface2 1
+    400144: polySurface2 2
+    400146: polySurface2 3
+    400148: polySurface2 4
+    400150: polySurface4
+    400152: shell
+    400154: Stand1
+    400156: Stand1 1
+    400158: Stand2
+    400160: Stand2 1
+    400162: Stand3
+    400164: Stand3 1
+    400166: wayPoints
+    400168: pipe
+    2300000: LHCPipe:pCube1
+    2300002: LHCPipe:pCube1 1
+    2300004: LHCPipe:pCube1 2
+    2300006: LHCPipe:pCube2
+    2300008: LHCPipe:pCube2 1
+    2300010: LHCPipe:pCube2 2
+    2300012: LHCPipe:pCube3
+    2300014: LHCPipe:pCube3 1
+    2300016: LHCPipe:pCylinder2
+    2300018: LHCPipe:pCylinder2 1
+    2300020: LHCPipe:pCylinder3
+    2300022: LHCPipe:pCylinder3 1
+    2300024: LHCPipe:polySurface1
+    2300026: LHCPipe:polySurface1 1
+    2300028: LHCPipe:polySurface1 2
+    2300030: LHCPipe:polySurface2
+    2300032: LHCPipe:polySurface2 1
+    2300034: LHCPipe:polySurface2 2
+    2300036: pCube1
+    2300038: pCube1 1
+    2300040: pCube1 2
+    2300042: pCube1 3
+    2300044: pCube1 4
+    2300046: pCube2
+    2300048: pCube2 1
+    2300050: pCube2 2
+    2300052: pCube2 3
+    2300054: pCube2 4
+    2300056: pCube3
+    2300058: pCube3 1
+    2300060: pCube3 2
+    2300062: pCylinder2
+    2300064: pCylinder2 1
+    2300066: pCylinder2 2
+    2300068: pCylinder3
+    2300070: pCylinder3 1
+    2300072: pCylinder3 2
+    2300074: polySurface1
+    2300076: polySurface1 1
+    2300078: polySurface1 2
+    2300080: polySurface1 3
+    2300082: polySurface1 4
+    2300084: polySurface2
+    2300086: polySurface2 1
+    2300088: polySurface2 2
+    2300090: polySurface2 3
+    2300092: polySurface2 4
+    2300094: polySurface4
+    2300096: shell
+    2300098: pipe
+    3300000: LHCPipe:pCube1
+    3300002: LHCPipe:pCube1 1
+    3300004: LHCPipe:pCube1 2
+    3300006: LHCPipe:pCube2
+    3300008: LHCPipe:pCube2 1
+    3300010: LHCPipe:pCube2 2
+    3300012: LHCPipe:pCube3
+    3300014: LHCPipe:pCube3 1
+    3300016: LHCPipe:pCylinder2
+    3300018: LHCPipe:pCylinder2 1
+    3300020: LHCPipe:pCylinder3
+    3300022: LHCPipe:pCylinder3 1
+    3300024: LHCPipe:polySurface1
+    3300026: LHCPipe:polySurface1 1
+    3300028: LHCPipe:polySurface1 2
+    3300030: LHCPipe:polySurface2
+    3300032: LHCPipe:polySurface2 1
+    3300034: LHCPipe:polySurface2 2
+    3300036: pCube1
+    3300038: pCube1 1
+    3300040: pCube1 2
+    3300042: pCube1 3
+    3300044: pCube1 4
+    3300046: pCube2
+    3300048: pCube2 1
+    3300050: pCube2 2
+    3300052: pCube2 3
+    3300054: pCube2 4
+    3300056: pCube3
+    3300058: pCube3 1
+    3300060: pCube3 2
+    3300062: pCylinder2
+    3300064: pCylinder2 1
+    3300066: pCylinder2 2
+    3300068: pCylinder3
+    3300070: pCylinder3 1
+    3300072: pCylinder3 2
+    3300074: polySurface1
+    3300076: polySurface1 1
+    3300078: polySurface1 2
+    3300080: polySurface1 3
+    3300082: polySurface1 4
+    3300084: polySurface2
+    3300086: polySurface2 1
+    3300088: polySurface2 2
+    3300090: polySurface2 3
+    3300092: polySurface2 4
+    3300094: polySurface4
+    3300096: shell
+    3300098: pipe
+    4300000: shell
+    4300002: LHCPipe:pCylinder2
+    4300004: LHCPipe:pCylinder3
+    4300006: LHCPipe:pCube3
+    4300008: LHCPipe:pCube1
+    4300010: LHCPipe:polySurface1
+    4300012: LHCPipe:pCube2
+    4300014: LHCPipe:polySurface2
+    4300016: LHCPipe:pCube1
+    4300018: LHCPipe:polySurface1
+    4300020: LHCPipe:pCube2
+    4300022: LHCPipe:polySurface2
+    4300024: LHCPipe:pCylinder2
+    4300026: LHCPipe:pCylinder3
+    4300028: LHCPipe:pCube3
+    4300030: LHCPipe:pCube1
+    4300032: LHCPipe:polySurface1
+    4300034: LHCPipe:pCube2
+    4300036: LHCPipe:polySurface2
+    4300038: pCylinder2
+    4300040: pCylinder3
+    4300042: pCube3
+    4300044: pCube1
+    4300046: polySurface1
+    4300048: pCube2
+    4300050: polySurface2
+    4300052: pCube1
+    4300054: polySurface1
+    4300056: pCube2
+    4300058: polySurface2
+    4300060: pCylinder2
+    4300062: pCylinder3
+    4300064: pCube3
+    4300066: pCube1
+    4300068: polySurface1
+    4300070: pCube2
+    4300072: polySurface2
+    4300074: pCylinder2
+    4300076: pCylinder3
+    4300078: pCube3
+    4300080: pCube1
+    4300082: polySurface1
+    4300084: pCube2
+    4300086: polySurface2
+    4300088: pCube1
+    4300090: polySurface1
+    4300092: pCube2
+    4300094: polySurface2
+    4300096: polySurface4
+    4300098: pipe
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 1
+  userData: 

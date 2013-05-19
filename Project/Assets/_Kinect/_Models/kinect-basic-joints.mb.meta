@@ -1,0 +1,70 @@
+fileFormatVersion: 2
+guid: c73189472264b234ca4f69c231a56d04
+ModelImporter:
+  serializedVersion: 14
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: left_gun
+    100004: body
+    100006: right_gun
+    100008: right_arm
+    100010: left_arm
+    400000: //RootNode
+    400002: left_gun
+    400004: body
+    400006: right_gun
+    400008: right_arm
+    400010: left_arm
+    4300000: right_gun
+    4300002: left_gun
+    11100000: //RootNode
+    13700000: left_gun
+    13700002: right_gun
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    generateAnimations: 4
+    bakeSimulation: 0
+    splitAnimations: 1
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMesh: 0
+    keepQuads: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  createAvatar: 0
+  userData: 
